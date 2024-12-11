@@ -1,0 +1,81 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f8ff;
+}
+
+.background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(90deg, #ffafbd, #ffc3a0, #ff9a9e, #fad0c4, #fad0c4, #f0c27b, #4b79a1); /* Початковий градієнт з різними кольорами */
+    background-size: 200% 200%; /* Розмір для плавної анімації */
+    animation: backgroundAnimation 20s ease infinite; /* Анімація фону */
+}
+
+.clouds {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: url('https://www.transparenttextures.com/patterns/clouds.png') repeat; /* Зображення хмар */
+    animation: moveClouds 60s linear infinite; 
+    z-index: -1;
+}
+
+.sprite {
+    width: 75px; /* Розмір спрайтів */
+    height: 75px;
+    opacity: 0;
+    animation: jumpOut 3s forwards;
+}
+
+.pikachu {
+    animation-delay: 0s;
+}
+
+.psyduck {
+    animation-delay: 0.5s;
+}
+
+.charmander {
+    animation-delay: 1s;
+}
+
+.raichu {
+    animation-delay: 1.5s;
+}
+
+.golduck {
+    animation-delay: 2s;
+}
+
+.lickitung {
+    animation-delay: 2.5s;
+}
+
+@keyframes jumpOut {
+    0% { transform: translateY(-100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes moveClouds {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 0; }
+}
